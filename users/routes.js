@@ -36,8 +36,13 @@ module.exports = server => {
     
 }
 
-const welcome = (req, res) => {
-    res.send('Welcome!')
+const welcome = async (req, res) => {
+    try{
+        res.status(200).json({message: 'welcome!'})
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({error: "Cannot retrieve message"})
+    }
 }
 
 //REGISTER
