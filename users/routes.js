@@ -33,7 +33,7 @@ module.exports = server => {
     server.get('/getUserPersonal/:id',  authenticate, getUserPersonal)
     server.get('/getUserFinancial/:id',  authenticate, getUserFinancial)
     server.get('/getUserShopping/:id',  authenticate, getUserShopping)
-    
+    server.get('/userInfo/:id', getUserInfo)
 }
 
 const welcome = async (req, res) => {
@@ -92,6 +92,19 @@ const login = (req, res) => {
     })
 }
 
+//GET user information
+
+const getUserInfo = async(req, res) => {
+    let {id} = req.params
+    //getting user financial sites 
+    await Users.findById(id)
+        .then(user => {
+            res.status(200).json(user)
+        })
+        .catch(err => {
+            res.status(500).json(err)
+        })
+}
 
 //GET table data
 const financial = (req, res) => {
