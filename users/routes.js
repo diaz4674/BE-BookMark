@@ -33,7 +33,7 @@ module.exports = server => {
     server.get('/getUserPersonal/:id',  authenticate, getUserPersonal)
     server.get('/getUserFinancial/:id',  authenticate, getUserFinancial)
     server.get('/getUserShopping/:id',  authenticate, getUserShopping)
-    server.get('/userInfo/:id', getUserInfo)
+    server.get('/userInfo/:id', authenticate, getUserInfo)
 }
 
 const welcome = async (req, res) => {
