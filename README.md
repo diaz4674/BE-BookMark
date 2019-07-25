@@ -10,7 +10,7 @@ The user's table create's new users, and must include the following:
   - email
   - password
   
----the _user-id's at the the end of each table are already included in the endpoint function. 
+the _user-id's at the the end of each table are already included in the endpoint function. 
 
 The financial table are each individual user's financial sites they request, and include the following:
   - FinancialName
