@@ -8,7 +8,7 @@ const server = express()
 
 
 server.use(helmet())
-server.use(cors({origin: "*"}))
+server.use(cors())
 server.use(express.json())
 
 configureRoutes(server)
